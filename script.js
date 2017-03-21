@@ -24,6 +24,7 @@ firebase.auth().signInWithPopup(provider)
 	userEmail = user.email;
 	console.log("Här är userobjektet: " + user);	
 	console.log("Här är mailen: " + userEmail);
+	console.log(user.displayName);
 	
 	if (user.displayName == null){
 		
