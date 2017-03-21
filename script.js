@@ -48,7 +48,7 @@ logout.style.display = "inherit";
 
 });
 
-if (user.displayName == null){
+if (userName == null){
 	
 		vipButton.disabled = false;
 		
