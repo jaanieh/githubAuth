@@ -18,7 +18,7 @@ login.addEventListener("click", function(event){
 firebase.auth().signInWithPopup(provider)
 .then(function(result) {
 								// Om autentisering lyckas, så finns användarinfo i user
-	let user; = result.user;
+	let user = result.user;
 	console.log("Här är userobjektet: " + user);	
 	
 	if (user.displayName == null){
