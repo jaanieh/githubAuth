@@ -9,7 +9,7 @@ let vipButton = document.getElementById("vip");
 
 
 logout.style.display = "none";
-vipButton.style.display = "none";
+//vipButton.style.display = "none";
 
 
 //********** LOG IN KNAPP *****************/
@@ -47,6 +47,7 @@ firebase.auth().signInWithPopup(provider)
 	
 });
 
+//vipButton.style.display = "inherit";
 login.style.display = "none";
 logout.style.display = "inherit";
 
