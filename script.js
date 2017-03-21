@@ -17,7 +17,14 @@ firebase.auth().signInWithPopup(provider)
 								// Om autentisering lyckas, så finns användarinfo i user
 	let user = result.user;
 	console.log(user);
-	//logintext.innerHTML = `Du är inloggad som: ${user.displayName}`;
+	if (user.displayName == null){
+		
+	logintext.innerHTML = `Du är inloggad som: ${user.email}`;
+	}
+	else
+	{
+		logintext.innerHTML = `Du är inloggad som: ${user.displayName}, ${user.email}`
+	}
 });
 
 login.style.display = "none";
