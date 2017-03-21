@@ -3,8 +3,8 @@ window.addEventListener("load", function()
 var provider = new firebase.auth.GithubAuthProvider();
 let login = document.getElementById("login");
 let logout = document.getElementById("logout");
-let logintext = document.getElementsByClassName("text");
-let infotext = document.getElementsByClassName("infotext");
+let logintext = document.getElementById("text");
+let infotext = document.getElementById("infotext");
 
 logout.style.display = "none";
 //logintext.innerHTML = "";
@@ -24,7 +24,7 @@ firebase.auth().signInWithPopup(provider)
 	}
 	else
 	{
-		logintext.innerHTML = `Du är inloggad som: ${user.displayName}, ${user.email}`
+		logintext.innerHTML = `Du är inloggad som: ${user.displayName}`
 	};
 });
 
@@ -44,6 +44,9 @@ firebase.auth().signOut()
 	// Utloggning misslyckades
 	infotext.innerHTML = "Utloggning misslyckades";
 });
+
+login.style.display = "inherit";
+logout.style.display = "none";
 
 });
 
