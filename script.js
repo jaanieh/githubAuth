@@ -10,6 +10,7 @@ let vipButton = document.getElementById("vip");
 
 logout.style.display = "none";
 //vipButton.style.display = "none";
+vipButton.disabled = true;
 
 
 //********** LOG IN KNAPP *****************/
@@ -19,7 +20,9 @@ firebase.auth().signInWithPopup(provider)
 .then(function(result) {
 								// Om autentisering lyckas, så finns användarinfo i user
 	let user = result.user;
+	let userEmail = user.email;
 	console.log("Här är userobjektet: " + user);	
+	console.log("Här är mailen: " + userEmail);
 	
 	if (user.displayName == null){
 		
