@@ -72,13 +72,17 @@ console.log("Useremail utanför : " + userEmail);
 
 //************* LOG OUT KNAPP **************//
 logout.addEventListener("click", function(event){
+	
+	userEmail = null;
+	vipButton.disabled = true;
+	
 firebase.auth().signOut()
 .then(function(result) {
 	// Utloggning lyckades
 	logintext.innerHTML = "Du har loggat ut";
 	console.log("utloggning lyckades");
 	console.log("Useremail logoutbutton: " + userEmail);
-	userEmail = "";
+	
 	
 })
 .catch(function(error) {
