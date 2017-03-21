@@ -9,14 +9,8 @@ let vipButton = document.getElementById("vip");
 
 
 logout.style.display = "none";
-//logintext.innerHTML = "";
+vipButton.style.display = "none";
 
-
-
-vipButton.addEventListener("click", function(event){
-	
-	window.alert("Hej Janie!!");
-});
 
 //********** LOG IN KNAPP *****************/
 login.addEventListener("click", function(event){
@@ -36,15 +30,19 @@ firebase.auth().signInWithPopup(provider)
 	else
 	{
 		logintext.innerHTML = `Du är inloggad som: ${user.displayName} (${user.email}`
-	}
+	}	
 	
-		if (user.email == "janie.mobacker@live.se"){
-		vipButton.disabled = false;
+	if (user.email == "janie.mobacker@live.se"){
+		vipButton.disabled = false;'
+		
+		vipButton.addEventListener("click", function(event){
+	
+		window.alert("Hej Janie!!");
+		});
 		}
 		else {
 			vipButton.disabled = true;
 		}
-	
 	
 });
 
