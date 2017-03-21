@@ -52,7 +52,7 @@ logout.style.display = "inherit";
 });
 
 
-if (userEmail === "janie.mobacker@live.se"){
+if (userEmail == "janie.mobacker@live.se"){
 	
 		vipButton.disabled = false;
 		
