@@ -15,6 +15,7 @@ logout.style.display = "none";
 vipButton.disabled = true;
 
 
+
 //********** LOG IN KNAPP *****************/
 login.addEventListener("click", function(event){
 	
@@ -38,20 +39,7 @@ firebase.auth().signInWithPopup(provider)
 		logintext.innerHTML = `Du är inloggad som: ${user.displayName} (${user.email}`
 	}	
 	
-	if (userEmail == "janie.mobacker@live.se"){
 	
-		vipButton.disabled = false;
-		
-		vipButton.addEventListener("click", function(event){
-	
-		window.alert("Hej Janie!!");
-		
-		});
-		
-		}
-		else {
-			vipButton.disabled = true;
-		}
 	
 	
 });
@@ -64,7 +52,20 @@ logout.style.display = "inherit";
 });
 
 
-
+if (userEmail === "janie.mobacker@live.se"){
+	
+		vipButton.disabled = false;
+		
+		}
+		else {
+			vipButton.disabled = true;
+		}
+		
+	vipButton.addEventListener("click", function(event){
+	
+		window.alert("Hej Janie!!");
+		
+		});
 	
 
 //************* LOG OUT KNAPP **************//
@@ -83,7 +84,6 @@ firebase.auth().signOut()
 	console.log("utloggning misslyckades");
 });
 
-userEmail = "";
 login.style.display = "inherit";
 logout.style.display = "none";
 
