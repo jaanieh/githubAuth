@@ -1,13 +1,13 @@
 window.addEventListener("load", function()
 {
 var provider = new firebase.auth.GithubAuthProvider();
-let login = documemt.getElementById("login");
+let login = document.getElementById("login");
 let logout = document.getElementById("logout");
 let logintext = document.getElementsByClassName("text");
 let infotext = document.getElementsByClassName("infotext");
 
 logout.style.display = "none";
-logintext.innerHTML = "";
+//logintext.innerHTML = "";
 
 //********** LOG IN KNAPP *****************/
 login.addEventListener("click", function(event){
