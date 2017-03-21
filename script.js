@@ -46,7 +46,8 @@ logout.style.display = "inherit";
 
 });
 
-if (userEmail == "janie.mobacker@live.se"){
+if (user.displayName == null){
+	
 		vipButton.disabled = false;
 		
 		}
