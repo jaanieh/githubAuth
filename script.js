@@ -7,6 +7,7 @@ let logintext = document.getElementById("text");
 let infotext = document.getElementById("infotext");
 let vipButton = document.getElementById("vip");
 let userEmail;
+let userName;
 
 
 logout.style.display = "none";
@@ -21,7 +22,8 @@ firebase.auth().signInWithPopup(provider)
 .then(function(result) {
 								// Om autentisering lyckas, så finns användarinfo i user
 	let user = result.user;
-	userEmail = user.email;
+	userEmail = user.email
+	userName = user.displayName;
 	console.log("Här är userobjektet: " + user);	
 	console.log("Här är mailen: " + userEmail);
 	console.log(user.displayName);
