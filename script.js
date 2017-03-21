@@ -41,10 +41,13 @@ logout.addEventListener("click", function(event){
 firebase.auth().signOut()
 .then(function(result) {
 	// Utloggning lyckades
+	logintext.innerHTML = "Du har loggat ut";
+	console.log("utloggning lyckades");
 })
 .catch(function(error) {
 	// Utloggning misslyckades
 	infotext.innerHTML = "Utloggning misslyckades";
+	console.log("utloggning misslyckades");
 });
 
 login.style.display = "inherit";
