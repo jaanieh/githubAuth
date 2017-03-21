@@ -34,14 +34,9 @@ firebase.auth().signInWithPopup(provider)
 		logintext.innerHTML = `Du är inloggad som: ${user.displayName} (${user.email}`
 	}	
 	
-	if (user.email == "janie.mobacker@live.se"){
+	if (userEmail == "janie.mobacker@live.se"){
 		vipButton.disabled = false;
 		
-		vipButton.addEventListener("click", function(event){
-	
-		window.alert("Hej Janie!!");
-		
-		});
 		
 		}
 		else {
@@ -56,6 +51,12 @@ logout.style.display = "inherit";
 
 
 });
+
+	vipButton.addEventListener("click", function(event){
+	
+		window.alert("Hej Janie!!");
+		
+		});
 
 //************* LOG OUT KNAPP **************//
 logout.addEventListener("click", function(event){
