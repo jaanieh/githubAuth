@@ -7,11 +7,9 @@ let logintext = document.getElementById("text");
 let infotext = document.getElementById("infotext");
 let vipButton = document.getElementById("vip");
 let userEmail;
-let userName;
 
 
 logout.style.display = "none";
-//vipButton.style.display = "none";
 vipButton.disabled = true;
 
 
@@ -24,7 +22,6 @@ firebase.auth().signInWithPopup(provider)
 								// Om autentisering lyckas, så finns användarinfo i user
 	let user = result.user;
 	userEmail = user.email;
-	userName = user.displayName;
 	console.log("Här är userobjektet: " + user);	
 	console.log("Här är mailen: " + userEmail);
 	console.log(user.displayName);
@@ -36,7 +33,7 @@ firebase.auth().signInWithPopup(provider)
 	}
 	else
 	{
-		logintext.innerHTML = `Du är inloggad som: ${user.displayName} (${user.email}`
+		logintext.innerHTML = `Du är inloggad som: ${user.displayName}`
 	}	
 	
 	if (userEmail == "janie.mobacker@live.se"){
