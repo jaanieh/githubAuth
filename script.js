@@ -21,7 +21,6 @@ firebase.auth().signInWithPopup(provider)
 	let user; = result.user;
 	console.log("Här är userobjektet: " + user);	
 	
-	
 	if (user.displayName == null){
 		
 		logintext.innerHTML = `Du är inloggad som: ${user.email}`;
@@ -33,12 +32,14 @@ firebase.auth().signInWithPopup(provider)
 	}	
 	
 	if (user.email == "janie.mobacker@live.se"){
-		vipButton.disabled = false;'
+		vipButton.disabled = false;
 		
 		vipButton.addEventListener("click", function(event){
 	
 		window.alert("Hej Janie!!");
+		
 		});
+		
 		}
 		else {
 			vipButton.disabled = true;
