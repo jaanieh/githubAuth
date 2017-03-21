@@ -5,9 +5,23 @@ let login = document.getElementById("login");
 let logout = document.getElementById("logout");
 let logintext = document.getElementById("text");
 let infotext = document.getElementById("infotext");
+let vipButton = document.getElementById("vip");
+let user;
 
 logout.style.display = "none";
 //logintext.innerHTML = "";
+
+if (user.email == "janie.mobacker@live.se"){
+	vipButton.disabled = false;
+}
+else {
+	vipButton.disabled = true;
+}
+
+vipButton.addEventListener("click", function(event){
+	
+	window.alert("Hej Janie!!");
+});
 
 //********** LOG IN KNAPP *****************/
 login.addEventListener("click", function(event){
@@ -15,7 +29,7 @@ login.addEventListener("click", function(event){
 firebase.auth().signInWithPopup(provider)
 .then(function(result) {
 								// Om autentisering lyckas, så finns användarinfo i user
-	let user = result.user;
+	user = result.user;
 	console.log("Här är userobjektet: " + user);	
 	
 	
