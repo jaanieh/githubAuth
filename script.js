@@ -16,16 +16,18 @@ firebase.auth().signInWithPopup(provider)
 .then(function(result) {
 								// Om autentisering lyckas, så finns användarinfo i user
 	let user = result.user;
-	console.log(user);	
+	console.log("Här är userobjektet: " + user);	
 	
-	if (user.displayName == null){
-		
 	logintext.innerHTML = `Du är inloggad som: ${user.email}`;
+	
+	/*if (user.displayName == null){
+		
+	
 	}
 	else
 	{
 		logintext.innerHTML = `Du är inloggad som: ${user.displayName}`
-	};
+	};*/
 });
 
 login.style.display = "none";
