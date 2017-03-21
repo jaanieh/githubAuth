@@ -22,7 +22,7 @@ firebase.auth().signInWithPopup(provider)
 .then(function(result) {
 								// Om autentisering lyckas, så finns användarinfo i user
 	let user = result.user;
-	userEmail = user.email
+	userEmail = user.email;
 	userName = user.displayName;
 	console.log("Här är userobjektet: " + user);	
 	console.log("Här är mailen: " + userEmail);
@@ -38,6 +38,21 @@ firebase.auth().signInWithPopup(provider)
 		logintext.innerHTML = `Du är inloggad som: ${user.displayName} (${user.email}`
 	}	
 	
+	if (userEmail == "janie.mobacker@live.se"){
+	
+		vipButton.disabled = false;
+		
+		vipButton.addEventListener("click", function(event){
+	
+		window.alert("Hej Janie!!");
+		
+		});
+		
+		}
+		else {
+			vipButton.disabled = true;
+		}
+	
 	
 });
 
@@ -48,20 +63,9 @@ logout.style.display = "inherit";
 
 });
 
-if (userName == null){
-	
-		vipButton.disabled = false;
-		
-		}
-		else {
-			vipButton.disabled = true;
-		}
 
-	vipButton.addEventListener("click", function(event){
+
 	
-		window.alert("Hej Janie!!");
-		
-		});
 
 //************* LOG OUT KNAPP **************//
 logout.addEventListener("click", function(event){
@@ -71,6 +75,7 @@ firebase.auth().signOut()
 	logintext.innerHTML = "Du har loggat ut";
 	console.log("utloggning lyckades");
 	console.log(userEmail);
+	
 })
 .catch(function(error) {
 	// Utloggning misslyckades
@@ -78,6 +83,7 @@ firebase.auth().signOut()
 	console.log("utloggning misslyckades");
 });
 
+userEmail = "";
 login.style.display = "inherit";
 logout.style.display = "none";
 
