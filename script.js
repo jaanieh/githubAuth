@@ -78,6 +78,7 @@ firebase.auth().signOut()
 	logintext.innerHTML = "Du har loggat ut";
 	console.log("utloggning lyckades");
 	console.log("Useremail logoutbutton: " + userEmail);
+	userEmail = "";
 	
 })
 .catch(function(error) {
