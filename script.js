@@ -6,6 +6,7 @@ let logout = document.getElementById("logout");
 let logintext = document.getElementById("text");
 let infotext = document.getElementById("infotext");
 let vipButton = document.getElementById("vip");
+let userEmail;
 
 
 logout.style.display = "none";
@@ -20,7 +21,7 @@ firebase.auth().signInWithPopup(provider)
 .then(function(result) {
 								// Om autentisering lyckas, så finns användarinfo i user
 	let user = result.user;
-	let userEmail = user.email;
+	userEmail = user.email;
 	console.log("Här är userobjektet: " + user);	
 	console.log("Här är mailen: " + userEmail);
 	
@@ -34,14 +35,6 @@ firebase.auth().signInWithPopup(provider)
 		logintext.innerHTML = `Du är inloggad som: ${user.displayName} (${user.email}`
 	}	
 	
-	if (userEmail == "janie.mobacker@live.se"){
-		vipButton.disabled = false;
-		
-		
-		}
-		else {
-			vipButton.disabled = true;
-		}
 	
 });
 
@@ -51,6 +44,14 @@ logout.style.display = "inherit";
 
 
 });
+
+if (userEmail == "janie.mobacker@live.se"){
+		vipButton.disabled = false;
+		
+		}
+		else {
+			vipButton.disabled = true;
+		}
 
 	vipButton.addEventListener("click", function(event){
 	
@@ -65,6 +66,7 @@ firebase.auth().signOut()
 	// Utloggning lyckades
 	logintext.innerHTML = "Du har loggat ut";
 	console.log("utloggning lyckades");
+	console.log(userEmail);
 })
 .catch(function(error) {
 	// Utloggning misslyckades
