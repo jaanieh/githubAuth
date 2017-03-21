@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Gitbuh Autentisering</title>
+
+
+<script src="https://www.gstatic.com/firebasejs/3.7.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.7.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.7.1/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.7.1/firebase-messaging.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/3.7.2/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCuv1IyiKBGseLSyygaWrHlqM-H2sVVrxY",
+    authDomain: "githubauth-21bf8.firebaseapp.com",
+    databaseURL: "https://githubauth-21bf8.firebaseio.com",
+    storageBucket: "githubauth-21bf8.appspot.com",
+    messagingSenderId: "512181321224"
+  };
+  firebase.initializeApp(config);
+</script>
+
+<link rel="stylesheet" type="text/css" href="style.css">
+<script src="script.js"></script>
+
+
+</head>
+<body>
+
+<button id="login">Logga in</button>
+<button id="logout">Logga ut</button>
+
+<div class="text">Du är inloggad som: </div>
+
+
+
+</body>
+</html>
