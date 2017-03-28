@@ -24,7 +24,7 @@ firebase.auth().signInWithPopup(provider)
 	userEmail = user.email;
 	console.log("Här är userobjektet: " + user);	
 	console.log("Här är mailen: " + userEmail);
-	console.log(user.displayName);
+	console.log("namn: " + user.displayName);
 	
 	if (user.displayName == null){
 		
@@ -33,7 +33,7 @@ firebase.auth().signInWithPopup(provider)
 	}
 	else
 	{
-		logintext.innerHTML = `Du är inloggad som: ${user.displayName}`
+		logintext.innerHTML = `Du är inloggad som: ${user.displayName}`;
 	}	
 	
 	if (userEmail == "janie.mobacker@live.se"){
